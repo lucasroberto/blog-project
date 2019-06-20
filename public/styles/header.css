@@ -8,15 +8,6 @@ header {
     display: flex !important;
     flex-direction: column;
   }
-/*   
-  .header-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 5px 48px;
-  } */
 
   .brand-social {
     padding: 5px 48px;
@@ -49,7 +40,7 @@ header {
   hr {
     background: #FF852E;
     width: 500px;
-    margin: 0% 0% 18px !important;
+    margin: 0% 0% 18px ;
   }
 
   span {
@@ -109,13 +100,12 @@ header {
   }
   
   .title h2 {
-    width: 557px;
-    height: 96px;
+    /* height: 96px; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
-    line-height: 150%;
+    /* font-size: 32px; */
+    /* line-height: 150%; */
     display: flex;
     align-items: center;
     letter-spacing: -0.5px;
@@ -204,4 +194,64 @@ header {
     background: #FF852E;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     color: #FFF;
+  }
+
+  @media (max-width: 776px) { 
+    .week {
+      width: 100%;
+      height: initial;
+    }
+
+    header {
+      height: auto;
+    }
+
+    header p, hr, .title p, .author {
+      width: 100%;
+    }
+
+    header p {
+      height: auto;
+    }
+
+    hr {
+      margin: 5px;
+    }
+
+  }
+
+  @media (max-width: 500px) {
+    .week h1 {
+      font-size: 35px;
+    }
+
+    header span, hr {
+      display: none;
+    }
+
+    .get-lead input {
+      width: 90%;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social a {
+      margin: 2px 0%;
+    }
+
+    .social-item:nth-child(2) {
+      margin-left: initial;
+    }
+
+    .author {
+      margin-top: 30px;
+    }
+
+    .title p {
+      height: auto;
+    }
   }

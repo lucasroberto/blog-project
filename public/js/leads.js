@@ -14,11 +14,11 @@ const newLead = dataForm => {
 
 const getCsv = (callback) => {
     const leads = firebase.database().ref('leads');
-    const data = [['E-mail', 'Nome', 'IP', 'Tipo', 'Data e hora']];
+    const data = [['E-mail', 'name', 'IP', 'Tipo', 'Data e hora']];
     leads.on('value', (snapshot) => {
         snapshot.forEach((lead) => {
-            const { name } = lead.val();
-            data.push([lead.email, lead.name])
+            const leadData = lead.val();
+            data.push([leadData[0], leadData[1], leadData[3],leadData[4],leadData[5]])
         });
         csv(data, (err, output) => {
             callback(output);

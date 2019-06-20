@@ -37,46 +37,54 @@
 </head>
 
 <body>
-    <header style='background-image: url("../assest/img/header/Rectangle.png");'>
-        <div class="header-content">
-            <div class="brand-social">
-                <a href="">
-                    <img src="/assest/img/metiradotedio.png" alt="Me tira do tédio">
-                    <h1 style="display: none" id="our-brand">Metiradotedio</h1>
-                </a>
-                <div class="social">
-                    <a href="https://www.facebook.com/metiradotedioblog" class="social-item"> <img src="/assest/img/facebook.png" alt="facebook da me tira do tédio"> </a>
-                    <a href="https://www.instagram.com/metiradotedio_/?hl=pt-br" class="social-item"> <img src="/assest/img/instagram.png" alt="intagram da me tira do tédio"></a>
-                </div>
-            </div>
+    <div class="brand-social">
+        
+        <a href="https://metiradotedio.herokuapp.com/">
+            <img brand src="/assest/img/metiradotedio-04.png" alt="Me tira do tédio">
+            <h1 style="display: none" id="our-brand">Metiradotedio</h1>
+        </a>
+        <div class="social">
+            <a href="https://www.facebook.com/metiradotedioblog" class="social-item"> <img src="/assest/img/facebook.png" alt="facebook da me tira do tédio"> </a>
+            <a href="https://www.instagram.com/metiradotedio_/?hl=pt-br" class="social-item"> <img src="/assest/img/instagram.png" alt="intagram da me tira do tédio"></a>
+        </div>
+
+    </div>
+    <header style='background-image: url("../assest/img/header/home.png");'>
     
             <a href="" class="week btn">
-                <h1>Você sabe como organizar um coffee break para eventos ?</h1>
+                <h1>Tudo sobre eventos e atividades culturais em primeira mão.</h1>
             </a>
-
-            <a href="" class="btn">
+            <a style="padding: 0%;" href="" class="btn">
                 <p>
-                   Confira aqui e veja como esse planejamento pode potencializar a experiência do público na participação do seu evento!
+                   Aqui você confere as melhores dicas sobre: Shows, festas, cursos, congressos, eventos esportivos, religiosos e gastronômicos do Brasil.
                 </p>
             </a>
+            <hr></hr>
+            <span>Quer ficar ligado em tudo que está rolando ?</span>
+
         </div>
     </header>
+    <div   class="cta">
+        <a href="#form-lead" onclick="focus()" class="cta-button">
+            <h4>Clique aqui!</h4>
+        </a>
+    </div>
 
     <div class="container">
 
         <div class="event card mb-3 mt20">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <a class="btn" href="/article">
+                    <a class="btn" href="/voce-sabe-como-organizar-um-coffee-break-para-eventos">
                         <img src="/assest/img/main/dicas_para_pre.png" class="card-img" alt="Dicas para os pré-esquentas da 23ª Parada do Orgulho!">
                     </a>
                 </div>
                 <div class="col-md-8">
                     <div class="title card-body">
-                        <a href="/article">
+                        <a href="/voce-sabe-como-organizar-um-coffee-break-para-eventos">
                             <h2 class="card-title">Dicas para os pré-esquentas da 23ª Parada do Orgulho!</h2>
                         </a>
-                        <a href="/article">
+                        <a href="/voce-sabe-como-organizar-um-coffee-break-para-eventos">
                             <p class="card-text">Chegou a semana da 23ª Parada do Orgulho LGBT+ aqui em São Paulo e temos as melhores dicas para vocês aproveitarem essa semana inteira de eventos e o grande dia!! Confira!!</p>
                         </a>
                         <div class="author">
@@ -229,7 +237,7 @@
             <h3>Se inscreva em nosso Newsletter!</h3>
         </div>
 
-        <form class="get-lead" action="/leads" method="POST">
+        <form id="form-lead" class="get-lead" action="/leads" method="POST">
             <input class="field" type="text" name="name" placeholder="Nome completo">
             <input class="field" type="email" name="email" placeholder="digite o e-mail">
             <input style="display: none" type="text" name="ip" id="ip">
@@ -242,7 +250,6 @@
         $(function() {
           $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
             function(json) {
-              console.log("Meu IP público é: ", json.ip);
               let ip = $('#ip');
               ip[0].value = json.ip ;
             }

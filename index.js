@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 });
 
 // article
-app.get('/como-montar-um-coffee-break-para-eventos', (req, res) => {
-    res.sendFile(__dirname + '/public/articles/como-montar-um-coffee-break-para-eventos.html')
+app.get('/quer-estudar-com-pouca-grana', (req, res) => {
+    res.sendFile(__dirname + '/public/articles/quer-estudar-com-pouca-grana.html')
 });
 
 app.get('/dicas-para-esquentas-parada-orgulho-lgbt', (req, res) => {
